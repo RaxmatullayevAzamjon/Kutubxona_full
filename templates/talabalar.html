@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talabalar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Hamma Talabalar Ro'yhati</h1>
+    <br>
+    <hr>
+    <br>
+    <form method="get">
+        <input type="text" placeholder="ism yozing" name="ism">
+        <button type="submit"> Qidirish </button>
+    </form>
+    <br>
+    <br>
+    {% for talaba in talabalar %}
+    <h1>{{talaba.id}}. <a href="/talaba/{{talaba.id}}/">{{talaba}}</a>, kitob soni - {{talaba.kitob_soni}} ({{talaba.kurs}}-Kurs)</h1>
+    <button><a href="/talaba_ochir/{{talaba.id}}/">O'chirish</a></button>
+    <button><a href="/talaba_edit/{{talaba.id}}/">Taxrirlash</a></button>
+    {% endfor %}
+    <br>
+    <hr>
+    <br>
+    <form method="post">{% csrf_token %}
+        <input type="text" placeholder="ism yozing" name="ism">
+        <label>Kursi : </label>
+        <select name="k">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        <input type="number" placeholder="kitob soni" name="k_s">
+        <button type="submit"> Qo'shish </button>
+    </form>
+</body>
+</html>
+

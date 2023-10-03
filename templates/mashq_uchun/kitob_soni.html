@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Kitob soni 0 dan kotta Talabalar</h1>
+    <br>
+    <hr>
+    {% for talaba in kitob_soni %}
+    <h1>{{talaba.id}}. {{talaba.ism}}, {{talaba.kitob_soni}}</h1>
+    {% endfor %}
+</body>
+</html>

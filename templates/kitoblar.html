@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Hamma Kitoblar ro'yxati</h1>
+    <br>
+    <form method="get">
+        <input type="text" placeholder="Kitob nomi" name="nom">
+        <button type="submit">Qidirish</button>
+    </form>
+    <br>
+    <hr>
+    {% for kitob in kitoblar%}
+    <h1>{{kitob.id}}.<a href="/kitob/{{kitob.id}}/">{{kitob}}</a>  (sahifasi-{{kitob.sahifa}})</h1>
+    <button><a href="/kitob_ochir/{{kitob.id}}"/>O'chirish</a></button>
+    <button><a href="/kitob_edit/{{kitob.id}}"/>Taxrirlash</a></button>
+    {% endfor %}
+    <br>
+    <br>
+    <form method="post"> {% csrf_token %}
+        <input type="text" placeholder="Kitob nomi" name="nom">
+        <select name="j">
+            <option value="Badiiy">Badiiy</option>
+            <option value="Ilmiy">Ilmiy</option>
+            <option value="Hujjatli">Hujjatli</option>
+        </select>
+        <input type="number" placeholder="sahifa" name="s">
+        <label>Muallif: </label>
+        <select name="m">
+            {% for muallif in mualliflar %}
+            <option value="{{muallif.id}}">{{muallif.ism}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit"> Qo'shish </button>
+</body>
+</html>
+

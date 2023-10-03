@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Kitobi eng ko'p 3- ta Muallif </h1>
+    <br>
+    <hr>
+    {% for muallif in muallif_kitobi %}
+    <h1>{{muallif.ism}}, {{muallif.kitob_soni}}</h1>
+    {% endfor %}
+
+</body>
+</html>

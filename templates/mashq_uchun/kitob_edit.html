@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitob</title>
+</head>
+<body>
+      <br>
+      <h1>Kitob ma'lumotlarini o'zgartirish</h1>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <form method="post">{% csrf_token %}
+          <label> Nom: </label>
+        <input type="text" value="{{kitob.nom}}" name="n" disabled>
+          <label> janr: </label>
+        <input type="text" value="{{kitob.janr}}" name="j" disabled>
+          <label> Sahifasi: </label>
+        <input type="number" value="{{kitob.sahifa}}" name="s">
+        <input type="text" value="{{kitob.muallif.ism}}" name="m" disabled>
+        <button type="submit"> Taxrirlash </button>
+      <br>
+      <br>
+      <hr>
+    </form>
+</body>
+</html>
+

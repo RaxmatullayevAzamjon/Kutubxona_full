@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mualliflar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Hamma Mualliflar ro'yxati</h1>
+    <br>
+    <br>
+    <form method="get">
+        <input type="text" placeholder="muallif ismi bn" name="ismi">
+        <button type="submit"> Qidirish </button>
+    </form>
+    <br>
+    <hr>
+    {% for muallif in mualliflar %}
+    <h1>{{muallif.id}}. <a href="/muallif/{{muallif.id}}/">{{muallif}}</a> Tirik - ({{muallif.tirik}})</h1>
+    <button><a href="/muallif_ochir/{{muallif.id}}/">O'chirish</a></button>
+    <button><a href="/muallif_edit/{{muallif.id}}/">Taxrirlash</a></button>
+    {% endfor%}
+    <br>
+    <br>
+    <form method="post"> {% csrf_token %}
+        <input type="text" placeholder="muallif ismi" name="ism">
+        <select name="j">
+            <option value="Erkak">Erkak</option>
+            <option value="Ayol">Ayol</option>
+        </select>
+        <input type="number" placeholder="kitob soni" name="k_s">
+        <label>Tugikgan yili: </label>
+        <input type="date" placeholder="tugilgan yili" name="t_y">
+        <label>Tirik: </label>
+        <select name="t">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        <button type="submit"> Qo'shish </button>
+        <br>
+        <br>
+    </form>
+</body>
+</html>
+
+

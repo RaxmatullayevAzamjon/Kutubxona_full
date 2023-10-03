@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <h1>Tirik Mualliflar ro'yxati:</h1>
+     <br>
+     <hr>
+     <br>
+        {% for muallif in mualliflar %}
+            <h1> {{muallif.id}}. ism: {{muallif.ism}} Tirik: {{muallif.tirik}}</h1>
+        {% endfor%}
+</body>
+</html>

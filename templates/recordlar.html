@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordlar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Hamma Recordlar ro'yxati</h1>
+    <br>
+    <form method="get">
+        <input type="text" placeholder="ism yozing" name="ismi">
+        <button type="submit"> Qidirish </button>
+    </form>
+    <hr>
+    <br>
+    {% for record in recordlar%}
+    <h1>{{record.id}}.<a href="/record/{{record.id}}/">{{record}}</a></h1>
+    <button><a href="/record_ochir/{{record.id}}/">O'chirish</a></button>
+    {% endfor%}
+    <br>
+    <br>
+    <form method="post"> {% csrf_token %}
+        <select name="t">
+            {% for talaba in talabalar %}
+            <option value="{{talaba.id}}">{{talaba.ism}}</option>
+            {% endfor %}
+        </select>
+        <select name="k">
+            {% for kitob in kitoblar %}
+            <option value="{{kitob.id}}">{{kitob.nom}}</option>
+            {% endfor %}
+        </select>
+        <select name="a">
+            {% for admin in adminlar %}
+            <option value="{{admin.id}}">{{admin.ism}}</option>
+            {% endfor %}
+        </select>
+        <label>Olingan sana: </label>
+        <input type="date" placeholder="olingan_sana" name="olingan_sana">
+        <label>Qaytarish sana: </label>
+        <input type="date" placeholder="qaytarish_sana" name="qaytarish_sana">
+        <label>Qaytardi: </label>
+        <select name="q">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select>
+        <button type="submit"> Qo'shish </button>
+    </form>
+</body>
+</html>
+

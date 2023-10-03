@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Eng kotta 3 ta kitob </h1>
+    <br>
+    <hr>
+    {% for kitob in kotta_kitob %}
+    <h1>{{kitob.nom}}, {{kitob.sahifa}}</h1>
+    {% endfor %}
+
+</body>
+</html>

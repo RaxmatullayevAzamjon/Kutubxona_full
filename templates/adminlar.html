@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adminlar</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Hamma Adminlar ro'yxati</h1>
+    <br>
+    <form method="get">
+        <input type="text" placeholder="ism yozing" name="ismi">
+        <button type="submit"> Qidirish </button>
+    </form>
+    <br>
+    <hr>
+    {% for admin in adminlar %}
+    <h1>{{admin.id}}. {{admin.ism}} ish vaqti - ({{admin.ish_vaqti}})</h1>
+     <button><a href="/admin_ochir/{{admin.id}}/">O'chirish</a></button>
+    {% endfor%}
+    <br>
+    <br>
+    <form method="post"> {% csrf_token %}
+        <input type="text" placeholder="ism yozing" name="ism">
+        <label>Ish vaqti: </label>
+        <select name="ish_v">
+            <option value="8:00-12:00">"8:00-12:00"</option>
+            <option value="12:00-18:00">"12:00-18:00"</option>
+        </select>
+        <button type="submit">Qo'shish</button>
+    </form>
+</body>
+</html>

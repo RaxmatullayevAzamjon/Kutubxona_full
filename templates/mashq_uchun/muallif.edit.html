@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muallif</title>
+</head>
+<body>
+      <br>
+      <h1>Muallif ma'lumotlarini o'zgartirish</h1>
+      <br>
+      <br>
+      <br>
+      <hr>
+       <form method="post">{% csrf_token %}
+          <label> Ism: </label>
+        <input type="text" value="{{muallif.ism}}" name="ism" disabled>
+          <label> Jins: </label>
+        <input type="number" value="{{muallif.kurs}}" name="j" disabled>
+          <label> Kitob soni : </label>
+        <input type="number" value="{{muallif.kitob_soni}}" name="k_s">
+           <label>Tug'ilgan yili </label>
+        <input type="text" value="{{muallif.tugilgan_yili}}" name="t_y">
+           <label>Hayotligi</label>
+        <input type="text" value="{{muallif.tirik}}" name="k_s">
+        <button type="submit"> Taxrirlash </button>
+      <br>
+      <br>
+      <hr>
+    </form>
+</body>
+</html>
+

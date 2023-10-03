@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salom</title>
+</head>
+<body>
+    <br>
+    <br>
+    <hr>
+    <h1>Salom,{{ism}}</h1>
+    <br>
+    <h2>Bu bizning Django loyihadagi ilk html viewimiz!</h2>
+    <br>
+    <h1>{{ism}}ning do'stlari:</h1>
+    {% for i in dostlar %}
+    <h2>{{i}}</h2>
+    {% endfor %}
+</body>
+</html>

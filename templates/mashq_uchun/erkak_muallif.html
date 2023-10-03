@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Erkak Mualliflar ro'yxati</h1>
+    <br>
+    <hr>
+    {% for muallif in mualliflar %}
+    <h1>{{muallif.id}}. {{muallif.ism}} jinsi- {{muallif.jins}}</h1>
+    {% endfor %}
+</body>
+</html>

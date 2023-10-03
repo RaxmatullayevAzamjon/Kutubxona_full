@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitiruvchiku</title>
+</head>
+<body>
+    <h1>Bitiruvchilarga tegishli recordlar:</h1>
+    <br>
+    <hr>
+    {% for bitiruvchi in bitiruvchilar %}
+        <h1>{{bitiruvchi.id}}. {{bitiruvchi}}</h1>
+    {% endfor %}
+</body>
+</html>
